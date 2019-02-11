@@ -45,6 +45,10 @@ body {
     height: 35px;
 }
 
+.logo:hover {
+    animation: moveInRight 1s ease-out;
+}
+
 .text-box {
     position: absolute;
     top: 40%;
@@ -55,6 +59,8 @@ body {
 .heading-primary {
     color: #fff;
     text-transform: uppercase;
+
+    backface-visibility: hidden; /* prevent animation shakiness */
 }
 
 .heading-primary-main {
@@ -62,6 +68,17 @@ body {
     font-size: 60px;
     font-weight: 400;
     letter-spacing: 35px;
+
+    animation-name: moveInLeft; /* specify animation name */
+    animation-duration: 1s; /* specify animation duration */
+    animation-timing-function: ease-out; /* start faster, end slower */
+
+
+    /*
+    animation-delay: 3s; time before animation plays
+    animation-iteration-count: 3;
+
+    */
 }
 
 .heading-primary-sub {
@@ -69,4 +86,51 @@ body {
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 17.4px;
+
+    /*animation-name: moveInRight;*/
+    /*animation-duration: 1s;*/
+    /*animation-timing-function: ease-out;*/
+    animation: moveInRight 1s ease-out; /* shorthand */
+}
+
+@keyframes moveInLeft {
+    /* browser optimization - animate only opacity and transform */
+    /* others are not optimized */
+    0% { /* start of animation */
+        opacity: 0; /* make element invisible */
+        transform: translateX(-100px); /* animate X axis to negative value */
+    }
+
+    /* craziness */
+    /* can specify multiple transformations per line */
+    /*60% {*/
+        /*transform: translateX(150px) rotate(180deg);*/
+    /*}*/
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% { /* end of animation */
+        opacity: 1; /* make element visible */
+        transform: translate(0) rotate(180deg); /* move back to original position */
+    }
+}
+
+@keyframes moveInRight {
+    /* browser optimization - animate only opacity and transform */
+    /* others are not optimized */
+    0% { /* start of animation */
+        opacity: 0; /* make element invisible */
+        transform: translateX(100px); /* animate X axis to negative value */
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% { /* end of animation */
+        opacity: 1; /* make element visible */
+        transform: translate(0); /* move back to original position */
+    }
 }
