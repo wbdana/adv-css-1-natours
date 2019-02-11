@@ -54,6 +54,7 @@ body {
     top: 40%;
     left: 50%; /* 50% left will START the div halfway across the page */
     transform: translate(-50%, -50%); /* move the element half of its own size back to the left, and half of its own size back to the top */
+    text-align: center; /* centers "Discover our tours" button */
 }
 
 .heading-primary {
@@ -61,6 +62,7 @@ body {
     text-transform: uppercase;
 
     backface-visibility: hidden; /* prevent animation shakiness */
+    margin-bottom: 60px; /* moves Discover our tours button down */
 }
 
 .heading-primary-main {
@@ -113,7 +115,7 @@ body {
 
     100% { /* end of animation */
         opacity: 1; /* make element visible */
-        transform: translate(0) rotate(180deg); /* move back to original position */
+        transform: translate(0); /* move back to original position */
     }
 }
 
@@ -133,4 +135,33 @@ body {
         opacity: 1; /* make element visible */
         transform: translate(0); /* move back to original position */
     }
+}
+
+.btn:link,
+.btn:visited { /* :link pseudo-class to style elements under a special position */
+    /* link is special state of button */
+    /* as is :visited (usually purple) */
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px; /* top/bottom 15px; left/right 40px */
+    /* top right bottom left for four values */
+    display: inline-block; /* works as though it is normal block element (text) */
+    border-radius: 100px; /* rounded corners */
+
+    transition: all .2s; /* animate all properties in shorthand */
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* move button up when hovered */
+    box-shadow: 0 10px 20px rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
+}
+
+.btn:active { /* when clicked :active pseudo-class */
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
