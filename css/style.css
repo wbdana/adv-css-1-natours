@@ -137,6 +137,20 @@ body {
     }
 }
 
+@keyframes moveInBottom {
+    /* browser optimization - animate only opacity and transform */
+    /* others are not optimized */
+    0% { /* start of animation */
+        opacity: 0; /* make element invisible */
+        transform: translateY(30px); /* animate Y axis to negative value */
+    }
+
+    100% { /* end of animation */
+        opacity: 1; /* make element visible */
+        transform: translate(0); /* move back to original position */
+    }
+}
+
 .btn:link,
 .btn:visited { /* :link pseudo-class to style elements under a special position */
     /* link is special state of button */
@@ -148,7 +162,8 @@ body {
     display: inline-block; /* works as though it is normal block element (text) */
     border-radius: 100px; /* rounded corners */
 
-    transition: all .2s; /* animate all properties in shorthand */
+    transition: all .2s; /* ***** animate all properties in shorthand */
+    position: relative; /* to specify ::after parent as .btn:visited */
 }
 
 .btn:hover {
@@ -164,4 +179,32 @@ body {
 .btn-white {
     background-color: #fff;
     color: #777;
+}
+
+.btn::after { /* ::after pseuo-element */
+    content: "";  /* necessary for element to appear on page */
+    display: inline-block; /* same as regular button */
+    height: 100%; /* 100% of the height/width of the button since ::after is treated as child of .btn */
+    width: 100%;
+    border-radius: 100px;
+    position: absolute; /* keep ::after behind parent */
+    top: 0;
+    left: 0;
+    z-index: -1; /* put ::after behind .btn */
+
+    transition: all .4s; /* animate all transitions */
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after { /* ::after pseudo-element only when .btn is hovered over */
+    transform: scaleX(1.4) scaleY(1.6); /* increase size of element, Y more so than X */
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s; /* .75s animation-delay */
+    animation-fill-mode: backwards; /* automatically applies 0% animation styles before animation starts; prevents displaying element before animation is triggered */
 }
