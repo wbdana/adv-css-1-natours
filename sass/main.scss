@@ -1,3 +1,5 @@
+@import "base/base";
+
 $color-primary-light: #7ed56f;
 $color-primary: #55c57a;
 $color-primary-dark: #28b485;
@@ -218,4 +220,3 @@ body {
     animation-fill-mode: backwards; /* automatically applies 0% animation styles before animation starts; prevents displaying element before animation is triggered */
   }
 }
-
