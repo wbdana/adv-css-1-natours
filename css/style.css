@@ -13,13 +13,18 @@ Dark green: #28b485
     box-sizing: border-box;
 }
 
+html {
+    /* set to 10px so 1rem = 10px */
+    font-size: 10px; /* root font size */
+}
+
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /*font-size: 16px;*/
     line-height: 1.7;
     color: #777;
-    padding: 30px; /* white border around entire page */
+    padding: 3rem; /* white border around entire page */
 }
 
 .header {
@@ -37,12 +42,12 @@ body {
 
 .logo-box {
     position: absolute; /* relative to parent with position: relative */
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 .logo:hover {
@@ -62,14 +67,14 @@ body {
     text-transform: uppercase;
 
     backface-visibility: hidden; /* prevent animation shakiness */
-    margin-bottom: 60px; /* moves Discover our tours button down */
+    margin-bottom: 6rem; /* moves Discover our tours button down */
 }
 
 .heading-primary-main {
     display: block; /* occupy entire width available and create line breaks before and after them */
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: moveInLeft; /* specify animation name */
     animation-duration: 1s; /* specify animation duration */
@@ -85,9 +90,9 @@ body {
 
 .heading-primary-sub {
     display: block; /* occupy entire width available and create line breaks before and after them */
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
 
     /*animation-name: moveInRight;*/
     /*animation-duration: 1s;*/
@@ -100,7 +105,7 @@ body {
     /* others are not optimized */
     0% { /* start of animation */
         opacity: 0; /* make element invisible */
-        transform: translateX(-100px); /* animate X axis to negative value */
+        transform: translateX(-10rem); /* animate X axis to negative value */
     }
 
     /* craziness */
@@ -110,7 +115,7 @@ body {
     /*}*/
 
     80% {
-        transform: translateX(10px);
+        transform: translateX(1rem);
     }
 
     100% { /* end of animation */
@@ -124,11 +129,11 @@ body {
     /* others are not optimized */
     0% { /* start of animation */
         opacity: 0; /* make element invisible */
-        transform: translateX(100px); /* animate X axis to negative value */
+        transform: translateX(10rem); /* animate X axis to negative value */
     }
 
     80% {
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
 
     100% { /* end of animation */
@@ -142,7 +147,7 @@ body {
     /* others are not optimized */
     0% { /* start of animation */
         opacity: 0; /* make element invisible */
-        transform: translateY(30px); /* animate Y axis to negative value */
+        transform: translateY(3rem); /* animate Y axis to negative value */
     }
 
     100% { /* end of animation */
@@ -157,23 +162,24 @@ body {
     /* as is :visited (usually purple) */
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px; /* top/bottom 15px; left/right 40px */
+    padding: 1.5rem 4rem; /* top/bottom 15px; left/right 40px */
     /* top right bottom left for four values */
     display: inline-block; /* works as though it is normal block element (text) */
-    border-radius: 100px; /* rounded corners */
+    border-radius: 10rem; /* rounded corners */
 
     transition: all .2s; /* ***** animate all properties in shorthand */
     position: relative; /* to specify ::after parent as .btn:visited */
+    font-size: 1.6rem;
 }
 
 .btn:hover {
-    transform: translateY(-3px); /* move button up when hovered */
-    box-shadow: 0 10px 20px rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
+    transform: translateY(-.3rem); /* move button up when hovered */
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
 }
 
 .btn:active { /* when clicked :active pseudo-class */
     transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
 }
 
 .btn-white {
@@ -186,7 +192,7 @@ body {
     display: inline-block; /* same as regular button */
     height: 100%; /* 100% of the height/width of the button since ::after is treated as child of .btn */
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute; /* keep ::after behind parent */
     top: 0;
     left: 0;
