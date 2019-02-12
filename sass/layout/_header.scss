@@ -1,0 +1,30 @@
+.header {
+  height: 95vh; /* At every point, the height of this element should be 95% of viewport height */
+  background-image: linear-gradient(
+                  to right bottom,
+                  rgba($color-primary-light, 0.8), // Using variables in rgba only works in sass
+                  rgba($color-primary-dark, 0.8)),
+  url(../img/hero.jpg);
+  background-size: cover; /* Fit width of viewport */
+  background-position: top; /* Ensure top of background image stays at top of image regardless of viewport size */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; /* origin for .logo-box */
+
+  &__logo-box {
+    position: absolute; /* relative to parent with position: relative */
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%; /* 50% left will START the div halfway across the page */
+    transform: translate(-50%, -50%); /* move the element half of its own size back to the left, and half of its own size back to the top */
+    text-align: center; /* centers "Discover our tours" button */
+  }
+}

@@ -1,0 +1,55 @@
+@keyframes moveInLeft {
+  /* browser optimization - animate only opacity and transform */
+  /* others are not optimized */
+  0% { /* start of animation */
+    opacity: 0; /* make element invisible */
+    transform: translateX(-10rem); /* animate X axis to negative value */
+  }
+
+  /* craziness */
+  /* can specify multiple transformations per line */
+  /*60% {*/
+  /*transform: translateX(150px) rotate(180deg);*/
+  /*}*/
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% { /* end of animation */
+    opacity: 1; /* make element visible */
+    transform: translate(0); /* move back to original position */
+  }
+}
+
+@keyframes moveInRight {
+  /* browser optimization - animate only opacity and transform */
+  /* others are not optimized */
+  0% { /* start of animation */
+    opacity: 0; /* make element invisible */
+    transform: translateX(10rem); /* animate X axis to negative value */
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% { /* end of animation */
+    opacity: 1; /* make element visible */
+    transform: translate(0); /* move back to original position */
+  }
+}
+
+@keyframes moveInBottom {
+  /* browser optimization - animate only opacity and transform */
+  /* others are not optimized */
+  0% { /* start of animation */
+    opacity: 0; /* make element invisible */
+    transform: translateY(3rem); /* animate Y axis to negative value */
+  }
+
+  100% { /* end of animation */
+    opacity: 1; /* make element visible */
+    transform: translate(0); /* move back to original position */
+  }
+}
