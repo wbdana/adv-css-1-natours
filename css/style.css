@@ -35,25 +35,22 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
   /* origin for .logo-box */ }
-
-.header__logo-box {
-  position: absolute;
-  /* relative to parent with position: relative */
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  /* 50% left will START the div halfway across the page */
-  transform: translate(-50%, -50%);
-  /* move the element half of its own size back to the left, and half of its own size back to the top */
-  text-align: center;
-  /* centers "Discover our tours" button */ }
+  .header__logo-box {
+    position: absolute;
+    /* relative to parent with position: relative */
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* 50% left will START the div halfway across the page */
+    transform: translate(-50%, -50%);
+    /* move the element half of its own size back to the left, and half of its own size back to the top */
+    text-align: center;
+    /* centers "Discover our tours" button */ }
 
 .heading-primary {
   color: #fff;
@@ -62,36 +59,34 @@ body {
   /* prevent animation shakiness */
   margin-bottom: 6rem;
   /* moves Discover our tours button down */ }
+  .heading-primary--main {
+    display: block;
+    /* occupy entire width available and create line breaks before and after them */
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    /* specify animation name */
+    animation-duration: 1s;
+    /* specify animation duration */
+    animation-timing-function: ease-out;
+    /* start faster, end slower */
+    /*
+    animation-delay: 3s; time before animation plays
+    animation-iteration-count: 3;
 
-.heading-primary--main {
-  display: block;
-  /* occupy entire width available and create line breaks before and after them */
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  /* specify animation name */
-  animation-duration: 1s;
-  /* specify animation duration */
-  animation-timing-function: ease-out;
-  /* start faster, end slower */
-  /*
-  animation-delay: 3s; time before animation plays
-  animation-iteration-count: 3;
-
-  */ }
-
-.heading-primary--sub {
-  display: block;
-  /* occupy entire width available and create line breaks before and after them */
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  /*animation-name: moveInRight;*/
-  /*animation-duration: 1s;*/
-  /*animation-timing-function: ease-out;*/
-  animation: moveInRight 1s ease-out;
-  /* shorthand */ }
+    */ }
+  .heading-primary--sub {
+    display: block;
+    /* occupy entire width available and create line breaks before and after them */
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    /*animation-name: moveInRight;*/
+    /*animation-duration: 1s;*/
+    /*animation-timing-function: ease-out;*/
+    animation: moveInRight 1s ease-out;
+    /* shorthand */ }
 
 @keyframes moveInLeft {
   /* browser optimization - animate only opacity and transform */
@@ -150,8 +145,7 @@ body {
     transform: translate(0);
     /* move back to original position */ } }
 
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   /* :link pseudo-class to style elements under a special position */
   /* link is special state of button */
   /* as is :visited (usually purple) */
@@ -173,7 +167,13 @@ body {
 .btn:hover {
   transform: translateY(-0.3rem);
   /* move button up when hovered */
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  /* X offset, Y offset, blur, shadow color */ }
+  .btn:hover::after {
+    /* ::after pseudo-element only when .btn is hovered over */
+    transform: scaleX(1.4) scaleY(1.6);
+    /* increase size of element, Y more so than X */
+    opacity: 0; }
 
 .btn:active {
   /* when clicked :active pseudo-class */
@@ -183,6 +183,8 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   /* ::after pseuo-element */
@@ -202,15 +204,6 @@ body {
   /* put ::after behind .btn */
   transition: all .4s;
   /* animate all transitions */ }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  /* ::after pseudo-element only when .btn is hovered over */
-  transform: scaleX(1.4) scaleY(1.6);
-  /* increase size of element, Y more so than X */
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
