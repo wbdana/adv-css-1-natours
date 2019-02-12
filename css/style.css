@@ -7,15 +7,20 @@ Dark green: #28b485
 
  */
 
-* {
+*,
+*::after, /* give these properties to all pseudo-elements */
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
+    box-sizing: inherit; /* force inheritance of box-sizing from browser default */
 }
 
 html {
     /* set to 10px so 1rem = 10px */
-    font-size: 10px; /* root font size */
+    /*font-size: 10px; !* root font size *!*/
+    font-size: 62.5%; /* percentage of root font size given by browser (default 16px) */
+    /* so 10px (what we want) divided by 16 (browser default) * 100 (percent) = given percentage */
 }
 
 body {
@@ -25,6 +30,8 @@ body {
     line-height: 1.7;
     color: #777;
     padding: 3rem; /* white border around entire page */
+
+    box-sizing: border-box;
 }
 
 .header {
