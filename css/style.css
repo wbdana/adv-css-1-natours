@@ -1,219 +1,219 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
- */
-
 *,
-*::after, /* give these properties to all pseudo-elements */
+*::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    /*box-sizing: border-box;*/
-    box-sizing: inherit; /* force inheritance of box-sizing from browser default */
-}
+  margin: 0;
+  padding: 0;
+  /*box-sizing: border-box;*/
+  box-sizing: inherit;
+  /* force inheritance of box-sizing from browser default */ }
 
 html {
-    /* set to 10px so 1rem = 10px */
-    /*font-size: 10px; !* root font size *!*/
-    font-size: 62.5%; /* percentage of root font size given by browser (default 16px) */
-    /* so 10px (what we want) divided by 16 (browser default) * 100 (percent) = given percentage */
-}
+  /* set to 10px so 1rem = 10px */
+  /*font-size: 10px; !* root font size *!*/
+  font-size: 62.5%;
+  /* percentage of root font size given by browser (default 16px) */
+  /* so 10px (what we want) divided by 16 (browser default) * 100 (percent) = given percentage */ }
 
 body {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    /*font-size: 16px;*/
-    line-height: 1.7;
-    color: #777;
-    padding: 3rem; /* white border around entire page */
-
-    box-sizing: border-box;
-}
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /* white border around entire page */
+  box-sizing: border-box; }
 
 .header {
-    height: 95vh; /* At every point, the height of this element should be 95% of viewport height */
-    background-image: linear-gradient(
-            to right bottom,
-            rgba(126, 213, 111, 0.8),
-            rgba(40, 180, 133, 0.8)),
-    url(../img/hero.jpg);
-    background-size: cover; /* Fit width of viewport */
-    background-position: top; /* Ensure top of background image stays at top of image regardless of viewport size */
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    position: relative; /* origin for .logo-box */
-}
+  height: 95vh;
+  /* At every point, the height of this element should be 95% of viewport height */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  /* Fit width of viewport */
+  background-position: top;
+  /* Ensure top of background image stays at top of image regardless of viewport size */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  /* origin for .logo-box */ }
 
 .header__logo-box {
-    position: absolute; /* relative to parent with position: relative */
-    top: 4rem;
-    left: 4rem;
-}
+  position: absolute;
+  /* relative to parent with position: relative */
+  top: 4rem;
+  left: 4rem; }
 
 .header__logo {
-    height: 3.5rem;
-}
+  height: 3.5rem; }
 
 .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%; /* 50% left will START the div halfway across the page */
-    transform: translate(-50%, -50%); /* move the element half of its own size back to the left, and half of its own size back to the top */
-    text-align: center; /* centers "Discover our tours" button */
-}
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  /* 50% left will START the div halfway across the page */
+  transform: translate(-50%, -50%);
+  /* move the element half of its own size back to the left, and half of its own size back to the top */
+  text-align: center;
+  /* centers "Discover our tours" button */ }
 
 .heading-primary {
-    color: #fff;
-    text-transform: uppercase;
-
-    backface-visibility: hidden; /* prevent animation shakiness */
-    margin-bottom: 6rem; /* moves Discover our tours button down */
-}
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* prevent animation shakiness */
+  margin-bottom: 6rem;
+  /* moves Discover our tours button down */ }
 
 .heading-primary--main {
-    display: block; /* occupy entire width available and create line breaks before and after them */
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
+  display: block;
+  /* occupy entire width available and create line breaks before and after them */
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  /* specify animation name */
+  animation-duration: 1s;
+  /* specify animation duration */
+  animation-timing-function: ease-out;
+  /* start faster, end slower */
+  /*
+  animation-delay: 3s; time before animation plays
+  animation-iteration-count: 3;
 
-    animation-name: moveInLeft; /* specify animation name */
-    animation-duration: 1s; /* specify animation duration */
-    animation-timing-function: ease-out; /* start faster, end slower */
-
-
-    /*
-    animation-delay: 3s; time before animation plays
-    animation-iteration-count: 3;
-
-    */
-}
+  */ }
 
 .heading-primary--sub {
-    display: block; /* occupy entire width available and create line breaks before and after them */
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-
-    /*animation-name: moveInRight;*/
-    /*animation-duration: 1s;*/
-    /*animation-timing-function: ease-out;*/
-    animation: moveInRight 1s ease-out; /* shorthand */
-}
+  display: block;
+  /* occupy entire width available and create line breaks before and after them */
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  /*animation-name: moveInRight;*/
+  /*animation-duration: 1s;*/
+  /*animation-timing-function: ease-out;*/
+  animation: moveInRight 1s ease-out;
+  /* shorthand */ }
 
 @keyframes moveInLeft {
-    /* browser optimization - animate only opacity and transform */
-    /* others are not optimized */
-    0% { /* start of animation */
-        opacity: 0; /* make element invisible */
-        transform: translateX(-10rem); /* animate X axis to negative value */
-    }
-
-    /* craziness */
-    /* can specify multiple transformations per line */
-    /*60% {*/
-        /*transform: translateX(150px) rotate(180deg);*/
-    /*}*/
-
-    80% {
-        transform: translateX(1rem);
-    }
-
-    100% { /* end of animation */
-        opacity: 1; /* make element visible */
-        transform: translate(0); /* move back to original position */
-    }
-}
+  /* browser optimization - animate only opacity and transform */
+  /* others are not optimized */
+  0% {
+    /* start of animation */
+    opacity: 0;
+    /* make element invisible */
+    transform: translateX(-10rem);
+    /* animate X axis to negative value */ }
+  /* craziness */
+  /* can specify multiple transformations per line */
+  /*60% {*/
+  /*transform: translateX(150px) rotate(180deg);*/
+  /*}*/
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    /* end of animation */
+    opacity: 1;
+    /* make element visible */
+    transform: translate(0);
+    /* move back to original position */ } }
 
 @keyframes moveInRight {
-    /* browser optimization - animate only opacity and transform */
-    /* others are not optimized */
-    0% { /* start of animation */
-        opacity: 0; /* make element invisible */
-        transform: translateX(10rem); /* animate X axis to negative value */
-    }
-
-    80% {
-        transform: translateX(-1rem);
-    }
-
-    100% { /* end of animation */
-        opacity: 1; /* make element visible */
-        transform: translate(0); /* move back to original position */
-    }
-}
+  /* browser optimization - animate only opacity and transform */
+  /* others are not optimized */
+  0% {
+    /* start of animation */
+    opacity: 0;
+    /* make element invisible */
+    transform: translateX(10rem);
+    /* animate X axis to negative value */ }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    /* end of animation */
+    opacity: 1;
+    /* make element visible */
+    transform: translate(0);
+    /* move back to original position */ } }
 
 @keyframes moveInBottom {
-    /* browser optimization - animate only opacity and transform */
-    /* others are not optimized */
-    0% { /* start of animation */
-        opacity: 0; /* make element invisible */
-        transform: translateY(3rem); /* animate Y axis to negative value */
-    }
-
-    100% { /* end of animation */
-        opacity: 1; /* make element visible */
-        transform: translate(0); /* move back to original position */
-    }
-}
+  /* browser optimization - animate only opacity and transform */
+  /* others are not optimized */
+  0% {
+    /* start of animation */
+    opacity: 0;
+    /* make element invisible */
+    transform: translateY(3rem);
+    /* animate Y axis to negative value */ }
+  100% {
+    /* end of animation */
+    opacity: 1;
+    /* make element visible */
+    transform: translate(0);
+    /* move back to original position */ } }
 
 .btn:link,
-.btn:visited { /* :link pseudo-class to style elements under a special position */
-    /* link is special state of button */
-    /* as is :visited (usually purple) */
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem; /* top/bottom 15px; left/right 40px */
-    /* top right bottom left for four values */
-    display: inline-block; /* works as though it is normal block element (text) */
-    border-radius: 10rem; /* rounded corners */
-
-    transition: all .2s; /* ***** animate all properties in shorthand */
-    position: relative; /* to specify ::after parent as .btn:visited */
-    font-size: 1.6rem;
-}
+.btn:visited {
+  /* :link pseudo-class to style elements under a special position */
+  /* link is special state of button */
+  /* as is :visited (usually purple) */
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  /* top/bottom 15px; left/right 40px */
+  /* top right bottom left for four values */
+  display: inline-block;
+  /* works as though it is normal block element (text) */
+  border-radius: 10rem;
+  /* rounded corners */
+  transition: all .2s;
+  /* ***** animate all properties in shorthand */
+  position: relative;
+  /* to specify ::after parent as .btn:visited */
+  font-size: 1.6rem; }
 
 .btn:hover {
-    transform: translateY(-.3rem); /* move button up when hovered */
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
-}
+  transform: translateY(-0.3rem);
+  /* move button up when hovered */
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
-.btn:active { /* when clicked :active pseudo-class */
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2) /* X offset, Y offset, blur, shadow color */
-}
+.btn:active {
+  /* when clicked :active pseudo-class */
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
-    background-color: #fff;
-    color: #777;
-}
+  background-color: #fff;
+  color: #777; }
 
-.btn::after { /* ::after pseuo-element */
-    content: "";  /* necessary for element to appear on page */
-    display: inline-block; /* same as regular button */
-    height: 100%; /* 100% of the height/width of the button since ::after is treated as child of .btn */
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute; /* keep ::after behind parent */
-    top: 0;
-    left: 0;
-    z-index: -1; /* put ::after behind .btn */
-
-    transition: all .4s; /* animate all transitions */
-}
+.btn::after {
+  /* ::after pseuo-element */
+  content: "";
+  /* necessary for element to appear on page */
+  display: inline-block;
+  /* same as regular button */
+  height: 100%;
+  /* 100% of the height/width of the button since ::after is treated as child of .btn */
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  /* keep ::after behind parent */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* put ::after behind .btn */
+  transition: all .4s;
+  /* animate all transitions */ }
 
 .btn--white::after {
-    background-color: #fff;
-}
+  background-color: #fff; }
 
-.btn:hover::after { /* ::after pseudo-element only when .btn is hovered over */
-    transform: scaleX(1.4) scaleY(1.6); /* increase size of element, Y more so than X */
-    opacity: 0;
-}
+.btn:hover::after {
+  /* ::after pseudo-element only when .btn is hovered over */
+  transform: scaleX(1.4) scaleY(1.6);
+  /* increase size of element, Y more so than X */
+  opacity: 0; }
 
 .btn--animated {
-    animation: moveInBottom .5s ease-out .75s; /* .75s animation-delay */
-    animation-fill-mode: backwards; /* automatically applies 0% animation styles before animation starts; prevents displaying element before animation is triggered */
-}
+  animation: moveInBottom .5s ease-out .75s;
+  /* .75s animation-delay */
+  animation-fill-mode: backwards;
+  /* automatically applies 0% animation styles before animation starts; prevents displaying element before animation is triggered */ }
