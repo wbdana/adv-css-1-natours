@@ -1,4 +1,5 @@
 .card {
+  // FUNCTIONALITY
   perspective: 150rem; // make it pop out at you
   -moz-perspective: 150rem; // Firefox
   position: relative;
@@ -40,5 +41,24 @@
 
   &:hover &__side--back { // .card:hover .card__side
     transform: rotateY(0deg);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: url(../img/nat-5.jpg);
+    }
+
+    &--3 {
+      background-image: url(../img/nat-5.jpg);
+    }
   }
 }
