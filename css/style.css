@@ -74,7 +74,7 @@ html {
 body {
   box-sizing: border-box; }
 
-.body {
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /*font-size: 16px;*/
@@ -240,3 +240,8 @@ body {
     /* move the element half of its own size back to the left, and half of its own size back to the top */
     text-align: center;
     /* centers "Discover our tours" button */ }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
