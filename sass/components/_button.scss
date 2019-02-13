@@ -12,7 +12,7 @@
 
     transition: all .2s; /* ***** animate all properties in shorthand */
     position: relative; /* to specify ::after parent as .btn:visited */
-    font-size: 1.6rem;
+    font-size: $default-font-size;
   }
 
   &:hover {
@@ -56,5 +56,30 @@
   &--animated {
     animation: moveInBottom .5s ease-out .75s; /* .75s animation-delay */
     animation-fill-mode: backwards; /* automatically applies 0% animation styles before animation starts; prevents displaying element before animation is triggered */
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block; // allows box model properties, e.g. padding, margin
+    text-decoration: none; // provide our own underline with border-bottom;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15); // x direction, y direction, blur, color (with opacity)
+    transform: translateY(-2px); // move up when hovered over
+  }
+
+  &:active {
+    box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+    transform: translateY(-2px);
   }
 }
