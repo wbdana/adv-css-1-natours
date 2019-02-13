@@ -44,3 +44,34 @@ body {
     animation: moveInRight 1s ease-out; /* shorthand */
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block; // prevent element from taking up full width
+  background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark); // linear gradient background
+  -webkit-background-clip: text; // background image only visible where text is
+  color: transparent; // set text to transparent to see background linear-gradient
+  transition: all .2s; // apply transitions
+  letter-spacing: 2px; // pixels over rem because 2px is so small anyway
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+  }
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+
+  &:not(:last-child) { // all but last child
+    margin-bottom: 3rem;
+  }
+}
