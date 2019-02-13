@@ -1,0 +1,44 @@
+.card {
+  perspective: 150rem; // make it pop out at you
+  -moz-perspective: 150rem; // Firefox
+  position: relative;
+  height: 50rem; // fix perspective with backface-visibility
+
+  &__side {
+    color: #fff;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg); // already rotated before hovered
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+
+      &-2 {
+
+      }
+    }
+  }
+
+  &:hover &__side--front { // .card:hover .card__side
+    transform: rotateY(180deg);
+  }
+
+  &:hover &__side--back { // .card:hover .card__side
+    transform: rotateY(0deg);
+  }
+}
