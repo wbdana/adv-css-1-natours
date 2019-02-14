@@ -39,6 +39,15 @@
     }
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+  }
+
   &::after { /* ::after pseuo-element */
     content: "";  /* necessary for element to appear on page */
     display: inline-block; /* same as regular button */
