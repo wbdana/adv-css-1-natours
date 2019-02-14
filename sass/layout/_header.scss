@@ -8,6 +8,7 @@
   background-size: cover; /* Fit width of viewport */
   background-position: top; /* Ensure top of background image stays at top of image regardless of viewport size */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // does not work on IE or Edge
   position: relative; /* origin for .logo-box */
 
   &__logo-box {
