@@ -1,0 +1,49 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    color: inherit;
+    font-size: 1.5rem;
+    font-family: inherit;     // browsers don't set this automatically
+    padding: 1.5rem 2rem;     // always a bit more on the sides
+    border-radius: 2px;
+    background-color: rgba($color-white, .5);
+    border: none;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+
+    &:focus {
+      outline: none;            // eliminate blue outline when focused
+      box-shadow: 0 1rem 2rem rgba($color-black, .1);   // WCAG
+      border-bottom: 3px solid $color-primary;
+    }
+
+    &:focus:invalid {           // invalid input focused element (email validation from Chrome)
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {      // input placeholder
+      color: $color-grey-dark-2
+    }
+  }
+
+  &__label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    display: block;
+    transition: all .3s;
+  }
+
+  &__input:placeholder-shown + &__label {       // + is adjacent sibling (first sibling) selector
+                                                //  ~ is general sibling selector (any sibling)
+    // when placeholder is shown on input element (no text written in input)
+    opacity: 0;                     // need this because we cannot animate invisibility
+    visibility: hidden;             // element is really gone
+    transform: translateY(-4rem);
+  }
+}
