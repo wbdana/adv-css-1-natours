@@ -7,6 +7,13 @@
   background-color: rgba($color-black, .8);
   z-index: 9999;
 
+  // Hidden, but can be animated
+  opacity: 0;
+  visibility: hidden;
+
+  // animations
+  transition: all .3s;
+
   &__content {
     @include absCenter;
 
@@ -16,6 +23,9 @@
     border-radius: 3px;
     display: table;
     overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.5); // set default scale for animation
+    transition: all .4s .2s;    // .4s transition with .2s delay
   }
 
   &__left {
@@ -52,4 +62,35 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
   }
+
+  // Open states
+  &:target {      // target of anchor tag <a href="#popup">...</a>
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:target &__content { // style content when popup is target
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); // set default scale for animation
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      color: $color-grey-dark;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      font-size: 3rem;
+      text-decoration: none;
+      display: inline-block;
+      transition: all .2s;
+      line-height: 1;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
 }
