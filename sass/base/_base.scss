@@ -12,6 +12,24 @@ html {
   /*font-size: 10px; !* root font size *!*/
   font-size: 62.5%; /* percentage of root font size given by browser (default 16px) */
   /* so 10px (what we want) divided by 16 (browser default) * 100 (percent) = given percentage */
+
+  //@include respond-phone {
+  //  font-size: 50%;
+  //}
+
+  // 1 rem = 10px; 10px/16px (browser default) = 62.5%
+
+  @include respond(tab-land) {        // width < 900?
+    font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) {        // width < 600?
+    font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1 rem = 12px, 12/16 = 75%
+  }
 }
 
 body {
