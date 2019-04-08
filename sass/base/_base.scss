@@ -34,4 +34,9 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 3rem; /* white border around entire page */
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

@@ -4,7 +4,6 @@ body {
   /*font-size: 16px;*/
   line-height: 1.7;
   color: $color-grey-dark;
-  padding: 3rem; /* white border around entire page */
 }
 
 .heading-primary {
@@ -24,11 +23,14 @@ body {
     animation-duration: 1s; /* specify animation duration */
     animation-timing-function: ease-out; /* start faster, end slower */
 
+    @include respond(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
 
     /*
     animation-delay: 3s; time before animation plays
     animation-iteration-count: 3;
-
     */
   }
 
@@ -42,6 +44,10 @@ body {
     /*animation-duration: 1s;*/
     /*animation-timing-function: ease-out;*/
     animation: moveInRight 1s ease-out; /* shorthand */
+
+    @include respond(phone) {
+      letter-spacing: .5rem;
+    }
   }
 }
 
@@ -55,6 +61,14 @@ body {
   color: transparent; // set text to transparent to see background linear-gradient
   transition: all .2s; // apply transitions
   letter-spacing: 2px; // pixels over rem because 2px is so small anyway
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);

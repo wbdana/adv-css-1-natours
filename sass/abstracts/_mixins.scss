@@ -13,6 +13,11 @@
   transform: translate(-50%, -50%);
 }
 
+
+//@mixin respond-phone {
+//  @media (max-width: 600px) { @content }    // @content allows us to pass a block into a mixin
+//}
+
 // MEDIA QUERY MANAGER
 /*
 0 - 600px:            Phone
@@ -20,18 +25,18 @@
 900 - 1200px:         Tablet Landscape
 1200 - 1800px is where our normal styles apply
 1800px + :            Big Desktop
- */
 
-//@mixin respond-phone {
-//  @media (max-width: 600px) { @content }    // @content allows us to pass a block into a mixin
-//}
-
-/*
 $breakpoint argument choices:
 - phone
 - tab-port
 - tab-land
 - big-desktop
+
+ORDER:
+Base + typography
+General layout
+Page layout
+Components
 
 1em = 16px
  */
