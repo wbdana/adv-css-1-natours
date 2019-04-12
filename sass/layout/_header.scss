@@ -4,12 +4,21 @@
                   to right bottom,
                   rgba($color-primary-light, 0.8), // Using variables in rgba only works in sass
                   rgba($color-primary-dark, 0.8)),
-  url(../img/hero.jpg);
+  url(../img/hero-small.jpg);
   background-size: cover; /* Fit width of viewport */
   background-position: top; /* Ensure top of background image stays at top of image regardless of viewport size */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); // does not work on IE or Edge
   position: relative; /* origin for .logo-box */
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+  (min-width: 125em) {
+    background-image: linear-gradient(
+                  to right bottom,
+                  rgba($color-secondary-light, 0.8), // Using variables in rgba only works in sass
+                  rgba($color-secondary-dark, 0.8)),
+    url(../img/hero.jpg);
+  }
 
   @include respond(phone) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
